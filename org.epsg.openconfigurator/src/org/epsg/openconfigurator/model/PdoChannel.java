@@ -30,6 +30,7 @@
  *******************************************************************************/
 package org.epsg.openconfigurator.model;
 
+import org.apache.commons.lang.StringUtils;
 import org.epsg.openconfigurator.console.OpenConfiguratorMessageConsole;
 
 /**
@@ -117,13 +118,13 @@ public class PdoChannel {
         }
 
         String value = nrEntriesSubObj.getActualValue();
-        if (value == null) {
+        if (value.equalsIgnoreCase(StringUtils.EMPTY)) {
             value = nrEntriesSubObj.getDefaultValue();
-        }
+            if (value == null) {
+                System.err.println("No default/actual value");
+                return 0;
+            }
 
-        if (value == null) {
-            System.err.println("No default/actual value");
-            return 0;
         }
 
         if (value.equals("")) {
@@ -152,7 +153,7 @@ public class PdoChannel {
         }
 
         String mappingVersion = mappingVersionSubObj.getActualValue();
-        if (mappingVersion == null) {
+        if (mappingVersion.equalsIgnoreCase(StringUtils.EMPTY)) {
             mappingVersion = mappingVersionSubObj.getDefaultValue();
         }
 

@@ -61,13 +61,9 @@ public class ModuleManagement {
     private InterfaceList modularHeadInterface;
     private TInterfaceList devModuleInterfaceList;
 
-    private TModuleInterface childModuleInterface;
+    List<TInterfaceList.Interface> interfce = new ArrayList<>();
 
-    private Node node;
-
-    List<TInterfaceList.Interface> interfce = new ArrayList<TInterfaceList.Interface>();
-
-    List<Interface> interfacelist = new ArrayList<Interface>();
+    List<Interface> interfacelist = new ArrayList<>();
 
     /**
      * Constructor that defines the module management from the XDD model.
@@ -76,7 +72,6 @@ public class ModuleManagement {
      * @param xddModel Instance of module XDD.
      */
     public ModuleManagement(Node node, ISO15745ProfileContainer xddModel) {
-        this.node = node;
         setXddModel(xddModel);
     }
 
@@ -153,8 +148,9 @@ public class ModuleManagement {
                 }
                 if (profileBodyDatatype instanceof ProfileBodyDevicePowerlinkModularChild) {
                     ProfileBodyDevicePowerlinkModularChild childDevProfile = (ProfileBodyDevicePowerlinkModularChild) profileBodyDatatype;
-                    childModuleInterface = childDevProfile.getDeviceManager()
-                            .getModuleManagement().getModuleInterface();
+                    // Implemented for future enhancements.
+                    // childModuleInterface = childDevProfile.getDeviceManager()
+                    // .getModuleManagement().getModuleInterface();
 
                 }
             }

@@ -82,7 +82,7 @@ public class HeadNodeInterface {
 
     private List<org.epsg.openconfigurator.xmlbinding.xdd.Range> listOfRange = new ArrayList<>();
 
-    private Object interfaceModel;
+    // private Object interfaceModel;
 
     /**
      * Constructor that describes the interface of modular head node from XDD
@@ -94,7 +94,7 @@ public class HeadNodeInterface {
     public HeadNodeInterface(Node node, Interface interfaces) {
         this.node = node;
         if (interfaces != null) {
-            interfaceModel = interfaces.getUniqueIDRef();
+            // interfaceModel = interfaces.getUniqueIDRef();
             rangeList = interfaces.getRangeList();
             uniqueIDRef = interfaces.getUniqueIDRef();
             intfc = (TInterfaceList.Interface) uniqueIDRef;

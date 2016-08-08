@@ -432,12 +432,12 @@ public final class OpenConfiguratorProjectUtils {
                             nodeName = FilenameUtils.removeExtension(String
                                     .valueOf(nodeImportFile.getFileName()));
 
-                            String targetConfigurationPath = new String(
+                            String targetConfigurationPath = String.valueOf(
                                     projectRootPath.toString() + IPath.SEPARATOR
                                             + IPowerlinkProjectSupport.DEVICE_CONFIGURATION_DIR
                                             + IPath.SEPARATOR + nodeName
                                             + IPath.SEPARATOR + extensionXdd);
-                            String targetDirectoryPath = new String(
+                            String targetDirectoryPath = String.valueOf(
                                     projectRootPath.toString() + IPath.SEPARATOR
                                             + IPowerlinkProjectSupport.DEVICE_CONFIGURATION_DIR);
 
@@ -485,8 +485,8 @@ public final class OpenConfiguratorProjectUtils {
         String targetImportPath = StringUtils.EMPTY;
         if (nodeImportFile != null) {
             if ((nodeImportFile.getFileName() != null)) {
-                targetImportPath = new String(
-                        projectRootPath.toString() + IPath.SEPARATOR
+                targetImportPath = String
+                        .valueOf(projectRootPath.toString() + IPath.SEPARATOR
                                 + IPowerlinkProjectSupport.DEVICE_IMPORT_DIR
                                 + IPath.SEPARATOR
                                 + String.valueOf(nodeImportFile.getFileName()));
@@ -514,7 +514,7 @@ public final class OpenConfiguratorProjectUtils {
                         extensionXdd += "_" + newNode.getNodeId()
                                 + IPowerlinkProjectSupport.XDC_EXTENSION;
 
-                        String targetConfigurationPath = new String(
+                        String targetConfigurationPath = String.valueOf(
                                 projectRootPath.toString() + IPath.SEPARATOR
                                         + IPowerlinkProjectSupport.DEVICE_CONFIGURATION_DIR
                                         + IPath.SEPARATOR + extensionXdd);
@@ -548,8 +548,8 @@ public final class OpenConfiguratorProjectUtils {
         String targetImportPath = StringUtils.EMPTY;
         if (nodeImportFile != null) {
             if ((nodeImportFile.getFileName() != null)) {
-                targetImportPath = new String(
-                        projectRootPath.toString() + IPath.SEPARATOR
+                targetImportPath = String
+                        .valueOf(projectRootPath.toString() + IPath.SEPARATOR
                                 + IPowerlinkProjectSupport.DEFAULT_OUTPUT_DIR
                                 + IPath.SEPARATOR
                                 + String.valueOf(nodeImportFile.getFileName()));
@@ -938,7 +938,7 @@ public final class OpenConfiguratorProjectUtils {
                             nodeName = FilenameUtils.removeExtension(String
                                     .valueOf(nodeImportFile.getFileName()));
 
-                            String targetConfigurationPath = new String(
+                            String targetConfigurationPath = String.valueOf(
                                     projectRootPath.toString() + IPath.SEPARATOR
                                             + IPowerlinkProjectSupport.DEVICE_CONFIGURATION_DIR
                                             + IPath.SEPARATOR + nodeName
@@ -1211,8 +1211,8 @@ public final class OpenConfiguratorProjectUtils {
                 String xddFileNameWithSuffix = xddFileNameWithNoSuffix + "_"
                         + newNodeId + IPowerlinkProjectSupport.XDC_EXTENSION;
 
-                String targetConfigurationPath = new String(
-                        projectRootPath.toString() + IPath.SEPARATOR
+                String targetConfigurationPath = String
+                        .valueOf(projectRootPath.toString() + IPath.SEPARATOR
                                 + IPowerlinkProjectSupport.DEVICE_CONFIGURATION_DIR
                                 + IPath.SEPARATOR + xddFileNameWithSuffix);
 

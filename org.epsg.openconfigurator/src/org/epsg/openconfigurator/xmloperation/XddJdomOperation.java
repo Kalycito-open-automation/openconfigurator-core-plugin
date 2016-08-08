@@ -2053,8 +2053,6 @@ public class XddJdomOperation {
 
         System.err.println("New param UniqueID..." + paramUniqueId);
 
-        String access = parameter.getAccess();
-
         TParameterList.Parameter parameterModel = parameter;
 
         String parameterUniqueId = parameterModel.getUniqueID();
