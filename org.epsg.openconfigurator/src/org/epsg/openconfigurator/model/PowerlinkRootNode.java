@@ -851,8 +851,8 @@ public class PowerlinkRootNode {
      * Removes the module from the project.
      *
      * @param module Instance of module to be removed.
-     * @param finalModuleCheck <true> if module is a final module, <false>
-     *            otherwise.
+     * @param finalModuleCheck <true> if module is a final module,
+     *            <false> otherwise.
      * @return <code>true</code> if module is removed. <code>false</code> if
      *         module is not removed.
      */
@@ -1102,22 +1102,26 @@ public class PowerlinkRootNode {
                             }
                             System.out.println("The path to be deleted.."
                                     + node.getAbsolutePathToXdc(nodeName));
+
                             FileUtils.deleteDirectory(new File(
                                     node.getAbsolutePathToXdc(nodeName)));
-                            Files.delete(Paths
-                                    .get(node.getAbsolutePathToXdc(nodeName)));
+                            Files.delete(
+                                    Paths.get(node.getAbsolutePathToXdc()));
                         }
-                    }
+                    } else {
 
-                    Files.delete(Paths.get(node.getAbsolutePathToXdc()));
+                        Files.delete(Paths.get(node.getAbsolutePathToXdc()));
+                    }
 
                 } catch (JDOMException | IOException ex) {
                     // TODO Auto-generated catch block
+
                     ex.printStackTrace();
                     IStatus errorStatus = new Status(IStatus.ERROR,
                             Activator.PLUGIN_ID, IStatus.OK,
                             "Error ocurred while delete a node", ex);
                     throw new CoreException(errorStatus);
+
                 }
 
                 System.err.println("Remove node.... leaving critical section");
